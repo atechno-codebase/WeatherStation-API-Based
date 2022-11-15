@@ -115,10 +115,25 @@
         let usrname = document.querySelector('#yourUsername')
         let pssword = document.querySelector('#yourPassword')
 
-        let variable = await fetch('/server/user/login', {method: 'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:usrname.value, password:pssword.value})})
+        let variable = await fetch('http://103.168.165.46/server/user/login', {method: 'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:usrname.value, password:pssword.value})})
         
         let response = await variable.json()
+        let access_token = response.accessToken
+
+
+        //Validating the credentials
+        if(response.message == "undefined" || response.message == "Incorrect Username or Password" || response.message == "Invalid User" )
+        {
+          alert("Wrong Credentials! \nPlease try some other combination..")
+        }
+        else if(response.accessToken == access_token)
+        {
+          window.open('indexmain.html')
+        }
         console.log(response)
+        console.log(response.message)
+        console.log(access_token)
+
       }
       /*  function check(form) { 
                 if(form.yourUsername.value == "rdc" && form.yourPassword.value == "07") {

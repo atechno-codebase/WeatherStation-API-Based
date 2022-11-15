@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard-Gas Detection Statics</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/MH.jpg" rel="icon">
+  <link href="assets/img/MH.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="assets/js/table2excel.js"></script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/MH.jpg" alt="browser does not support">
+        <span class="d-none d-lg-block">Dashboard</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+<nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li> 
+        
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/me2.jpeg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Mayur Hiwale</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Mayur Hiwale</h6>
+              <span>Admin</span>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      
+      <!-- start Blank Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-blank.html">
+          <i class="bi bi-file-earmark"></i>
+          <span>others</span>
+        </a>
+      </li>
+
+      <!-- End Blank Page Nav -->
+      <!-- start table Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <!--<li>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>General Tables</span>
+            </a>
+          </li>-->
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>Logs</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-Station Protocol.html">
+              <i class="bi bi-circle"></i><span>Station Protocol</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-DR Meterological P.html">
+              <i class="bi bi-circle"></i><span>DR Meterological P</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-MR Meterological P.html">
+              <i class="bi bi-circle"></i><span>MR Meterological P</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-DR Main Pol.html">
+              <i class="bi bi-circle"></i><span>DR Main Pol.</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-MR Main Pol.html">
+              <i class="bi bi-circle"></i><span>MR Main Pol.</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="charts-chartjs.html">
+              <i class="bi bi-circle"></i><span>Chart.js</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Charts Nav -->     
+      <!-- End Icons Nav -->
+
+      <li class="nav-heading">Pages</li>
+      <!-- End F.A.Q Page Nav -->
+
+      
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-register.html">
+          <i class="bi bi-card-list"></i>
+          <span>Register</span>
+        </a>
+      </li><!-- End Register Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-login.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Login</span>
+        </a>
+        
+      </li><!-- End Login Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-contact.html">
+          <i class="bi bi-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
+      <!-- End Error 404 Page Nav -->
+     
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Activity logs</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Table</li>
+                <li class="breadcrumb-item">Activity logs</li>
+                <li class="breadcrumb-item active">Status</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Users</h5>
+                        <!--Search Bar -->
+                        <div class="search-bar">
+                          <form class="search-form d-flex align-items-center" method="POST" action="#">
+                            <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                            <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                          </form>
+                        </div><!-- End Search Bar -->
+                        <div class="chartBox">
+                          <canvas id="myChart"></canvas>
+                          <input onchange="filterdata()" type="date" id="startdate" value="2021-08-25">
+                          <input oncahnge="filterdata()" type="date" id="enddate" value="2021-08-31">
+                        </div>
+                        <table id="tblCustomers" class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">User</th>
+                                    <th scope="col">Loged in as</th>
+                                    <th scope="col">Login</th>
+                                    <th scope="col">Logout</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Brandon Jacob</td>
+                                    <td>Designer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Bridie Kessler</td>
+                                    <td>Developer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Ashleigh Langosh</td>
+                                    <td>Finance</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Angus Grady</td>
+                                    <td>HR</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Raheem Lehner</td>
+                                    <td>Dynamic Division Officer</td>
+                                    <td>1pm-2016-05-25</td>
+                                    <td>2pm-2016-05-25</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                       
+                        <button class="btn" id="btnExport" value="Export" onclick="Export()"><i class="fa fa-download"></i> Download</button>
+                        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+                        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+                        <script type="text/javascript">
+                            function Export() {
+                                html2canvas(document.getElementById('tblCustomers'), {
+                                    onrendered: function (canvas) {
+                                        var data = canvas.toDataURL();
+                                        var docDefinition = {
+                                            content: [{
+                                                image: data,
+                                                width: 500
+                                            }]
+                                        };
+                                        pdfMake.createPdf(docDefinition).download("Table.pdf");
+                                    }
+                                });
+                            }
+                        </script>
+                        
+                        <button id="btnExport" onclick="exportReportToExcel(this)">Export HTML Table</button>
+                        <script type="text/javascript">
+                        function exportReportToExcel() {
+                          let tblCustomers = document.getElementsByID("tblCustomers");
+                          TableToExcel.convert(tblCustomers[0], { 
+                            name: `file.xlsx`,
+                            sheet: {
+                              name: 'Sheet 1'
+                            }
+                          });
+                          }
+                        </script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/TableExport/5.2.0/js/tableexport.min.js" integrity="sha512-XmZS54be9JGMZjf+zk61JZaLZyjTRgs41JLSmx5QlIP5F+sSGIyzD2eJyxD4K6kGGr7AsVhaitzZ2WTfzpsQzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+                        TableExport(document.getElementsByTagName("tblCustomers"), {
+                          filename: 'excelfile',            
+                          sheetname: "sheet1"                     
+                        });
+                        </script>
+                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", type="text/javascript">
+                          function Export() {
+                            $("#tblCustomers").table2excel({
+                              filename: "file.xls"
+                            });
+                          }
+                        </script>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main><!--End main-->
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Mayur Hiwale</span></strong>. All Rights Reserved
+    </div>
+    
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
