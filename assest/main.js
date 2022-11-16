@@ -115,6 +115,7 @@ function dayOfTheWeek(day,month,year) {
 /*Function that fetches and displays 
 the data from the weather API*/
 
+
 function fetchWeatherData() {
 /*Fetch the data and dynamicaly add 
 the city name with template literals*/
@@ -125,12 +126,14 @@ fetch(`http://103.168.165.46/server/node`, {
 })
 
 
+
   /*Take the data (Which is in JSON format) 
   and convert it to a regular JS object*/
   .then(response => response.json())
   .then(data => {
     /*You can console log the data to see what is available*/
     console.log(data);
+
     data = data[0]
     /*Let's start by adding the temperature 
     and weather condition to the page*/
@@ -149,6 +152,7 @@ fetch(`http://103.168.165.46/server/node`, {
     appealing and add it to the page*/
     /*Original format: 2021-10-09 17:53*/
     /*New Format: 17:53 - Friday 9, 10 2021*/
+
     // dateOutput.innerHTML = `${dayOfTheWeek(d, m, y)} ${m},${d}  ${y}`;
     // timeOutput.innerHTML = time;
     /*Add the name of the city into the page*/
@@ -240,6 +244,7 @@ fetch(`http://103.168.165.46/server/node`, {
   //     }
   //   }
   //   //Fade in the page once all is done
+
     app.style.opacity = "1";
   })
   /*If the user types a city that doesn't exist, 

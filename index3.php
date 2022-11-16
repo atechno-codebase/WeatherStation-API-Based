@@ -1,0 +1,131 @@
+<?php
+$con=mysqli_connect('localhost','root','','chartjs');
+$res=mysqli_query($con,"select * from barchart");
+?>
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content ="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+</head>
+<style>
+body{
+	background: linear-gradient(68.6deg, rgb(252, 165, 241) 1.8%, rgb(181, 255, 255) 100.5%);
+}
+
+.record3{
+	
+	background-color:#47d147;
+	color:white;
+	text-align:center;
+	border-color:#47d147;
+  border-radius: 4px;
+  padding: 10px 32px;
+ 
+}
+.record3:hover {
+	background-color:#47d147;
+	color:white;
+	cursor :pointer;
+	border-color:black;
+}
+.record3:active{
+    background:#47d147;
+}
+
+.record3:focus{
+    background:#47d147;
+}
+.record3:visited{
+    background:#47d147;
+}
+table td {
+	color:black;
+}
+table th {	
+background-color:#0E0E10;
+color:white;
+
+}
+.table tbody tr:nth-of-type(even){
+	background-color:#f3f3f3;
+}
+.col-md-2{
+	text-align: center;
+ 
+} 
+ a{
+		 color:white;
+		 text-decoration:none;
+		 font-size:1.1em;
+		 font-family:sans-serif;
+	 }
+
+</style>
+<body>
+ <div class ="ppp" style="margin-top:25px;"></div>
+   <div class="col-md-2">
+  <button  class = "record3">
+<a href="download.php">Export to CSV</a> 
+</button>
+  </div>
+<table class = "table">
+
+<thead>
+
+<tr>
+
+<th>id</th>
+<th>Temperature</th>
+<th>Rainfall</th>
+<th>Humidity</th>
+<th>Wind</th>
+</tr>
+</thead>
+<tbody>
+<?php while($row=mysqli_fetch_assoc($res)){
+	?>
+<tr>
+<td><?php echo $row['id']?></td>
+<td><?php echo $row['Temperature']?></td>
+<td><?php echo $row['Rainfall']?></td>
+<td><?php echo $row['Humidity']?></td>
+<td><?php echo $row['Wind']?></td>
+</tr>
+<?php } ?> 
+</tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src ="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('.table').DataTable({
+  "language": {
+    "lengthMenu": 'Display <select>'+
+      '<option value="3">Last 3hrs</option>'+
+      '<option value="6">Last 6hrs</option>'+
+      '<option value="12">Last 12hrs</option>'+
+      '<option value="24">Last 24hrs</option>'+
+      '<option value="22">Yesterday</option>'+
+      '<option value="-1">All</option>'+
+      '</select> records'
+  }
+   
+
+
+    });
+		
+		
+		
+	});
+
+
+
+
+</script>
+
+
+</body>
+</html>
